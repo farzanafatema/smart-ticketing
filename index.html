@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Ticketing</title>
+    <!-- deisy Ui -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- custom style  -->
+    <style>
+        .font-raleway {
+            font-family: "Raleway", sans-serif;
+        }
+
+        .font-inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
 
 </head>
 
@@ -12,8 +32,121 @@
     <!-- nav bar -->
 
     <!-- banner section -->
+    <section class=" min-h-screen bg-[url(images/banner.png)] bg-no-repeat bg-center p-32">
+        <div class="flex flex-col justify-center items-center  space-y-6 m-32">
+            <h1 class="text-6xl font-raleway font-bold"> End-to-End Travel with <br> <span
+                    class="text-[#1DD100] pl-24 ">P
+                    Paribahan</span>
+            </h1>
+            <P class="font-inter">Yes, you can run unit tests and view the results directly within the app. The
+                integrated testing features
+                allow for a streamlined .</P>
+            <button class=" btn bg-[#1DD100] border-[#1DD100] font-raleway  text-black">Buy Tickets</button>
+
+        </div>
+        <div class="flex flex-row justify-center gap-6">
+            <div class="bg-white border-b-4 border-b-[#1DD100] rounded-xl">
+                <div class="flex flex-row  gap-5 m-4  ">
+                    <div>
+                        <img src="images/people.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-inter">500K+</h3>
+                        <p class="font-raleway">Registered users</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white border-b-4 border-b-[#1DD100] rounded-xl">
+                <div class="flex flex-row gap-5 m-4">
+                    <div>
+                        <img src="images/ticket-cupon.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-inter">1.7 lacks</h3>
+                        <p class="font-raleway">Tickets sold</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border-b-4 border-b-[#1DD100] rounded-xl">
+                <div class="flex flex-row gap-5 m-4">
+                    <div>
+                        <img src="images/stoppage.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-inter">80K+</h3>
+                        <p class="font-raleway">Rental partners</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <!-- cupon section -->
+    <section class="min-h-screen  p-32 ">
+        <h1 class="text-4xl text-center font-bold">Best offers for you</h1>
+        <div class="grid grid-cols-2 gap-6 m-6">
+            <div class="flex flex-row  bg-[#FFBF0F] rounded-2xl">
+                <div class="p-6 space-y-2">
+                    <h1 class="text-2xl text-black font-bold">15% OFF</h1>
+                    <p>on your next purchas</p>
+                    <p>use by January 2024</p>
+                </div>
+                <div>
+
+                    <img src="images/cupon-devider.png" alt="">
+                </div>
+                <div class="flex flex-col justify-center items-center pl-16">
+                    <h1 class="text-2xl text-black font-bold space-y-2">NEW15</h1>
+                    <p>Coupon Code</p>
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div class="flex flex-row bg-[#F78C9C] rounded-2xl">
+                <div class="space-y-2 p-6">
+                    <h1 class="text-2xl text-black font-bold">20% OFF</h1>
+                    <p>on your next purchas</p>
+                    <p>use by January 2024</p>
+                </div>
+                <div>
+
+                    <img src="images/cupon-devider.png" alt="">
+                </div>
+                <div class="flex flex-col justify-center items-center pl-16 space-y-2">
+                    <h1 class="text-2xl text-black font-bold">Couple 20</h1>
+                    <p>Coupon Code</p>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center p-6">
+            <button class=" text-[#1DD100] border-2 border-[#1DD100] p-4 rounded-xl text-center ">See All
+                Offers</button>
+        </div>
+    </section>
     <!-- main section -->
+    <main class="min-h-screen  p-32 text-center space-y-4 bg-[#8e9b9b]">
+        <h1 class="text-2xl font-bold">P.H Paribahan</h1>
+        <p>Yes, you can run unit tests and view the results directly within the app. The integrated testing features
+            allow for a streamlined .</p>
+        <!-- greenline poribohon -->
+        <div>
+            <div>
+                <img src="images/bus-logo.png" alt="">
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+
+    </main>
     <!-- success section -->
     <!-- footer section -->
 
