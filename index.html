@@ -30,7 +30,7 @@
 
 <body>
     <!-- nav bar -->
-    <nav id="nav" class=" px-32 mb-0">
+    <nav id="nav" class=" px-32 pt-12">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -73,12 +73,13 @@
 
     <!-- banner section -->
     <section id="banner" class="  bg-[url(images/banner.png)] bg-no-repeat bg-center p-20">
-        <div class="flex flex-col justify-center items-center  space-y-6">
+        <div class="flex flex-col justify-center items-center  space-y-6 text-white">
             <h1 class="text-6xl font-raleway font-bold"> End-to-End Travel with <br> <span
                     class="text-[#1DD100] pl-24 ">P
                     Paribahan</span>
             </h1>
-            <P class="font-inter">Yes, you can run unit tests and view the results directly within the app. The
+            <P class="font-inter text-center">Yes, you can run unit tests and view the results directly within the app.
+                The <br>
                 integrated testing features
                 allow for a streamlined .</P>
             <button onclick="buyNow('buyTicket')"
@@ -340,52 +341,32 @@
                 <h1 class="font-bold text-2xl">Select Your Seat</h1>
                 <div class=" bg-white p-4 rounded-lg mt-2">
                     <!-- seat details -->
-                    <div class="overflow-x-auto">
-                        <table class="table">
+                    <div>
+                        <table class="table" id="seat-table">
                             <!-- head -->
                             <thead>
                                 <tr class="text-black">
-
                                     <th>Seat <span class="bg-green-400 rounded-full px-1 py-0.5"
-                                            id="selectedSeat"><sup>0</sup></span>
-                                    </th>
+                                            id="selectedSeat"><sup>0</sup></span></th>
                                     <th>Class</th>
                                     <th>Price</th>
                                 </tr>
                             </thead>
-
-                            <tbody>
-                                <!-- row 1 -->
-                                <tr>
-
-                                    <td>C1</td>
-                                    <td>Economoy</td>
-                                    <td>550</td>
-                                </tr>
-                                <!-- row 2 -->
-                                <tr>
-
-                                    <td><span id="C">C2</span></td>
-                                    <td>Economoy</td>
-                                    <td>550</td>
-                                </tr>
-                                <!-- row 3 -->
+                            <tbody id="table-body" class="table-body">
 
                                 <tr class="text-xl font-semibold">
-
                                     <td>Total Price</td>
                                     <td></td>
                                     <td id="totalPrice">0</td>
                                 </tr>
-
                                 <tr class="text-lg font-semibold">
-
                                     <td>Discount Price</td>
                                     <td></td>
                                     <td id="Discount-price">0</td>
                                 </tr>
                             </tbody>
                         </table>
+
                     </div>
                     <div>
                         <label id="cuponfield" class="input rounded-none flex items-center gap-2 pt-3">
@@ -475,6 +456,34 @@
     </footer>
     <script>
         var count = 0;
+        function seatDetailsCreate(btnId) {
+            const table = document.getElementById('seat-table');
+            const tableBody = document.getElementById('table-body');
+
+            const row = document.createElement('tr');
+
+            const btnCell = document.createElement('td');
+            btnCell.innerText = btnId;
+
+            const classCell = document.createElement('td');
+            classCell.innerText = 'Economy';
+
+            const priceCell = document.createElement('td');
+            priceCell.innerText = '550';
+
+            row.appendChild(btnCell);
+            row.appendChild(classCell);
+            row.appendChild(priceCell);
+            tableBody.appendChild(row);
+            const firstRow = tableBody.querySelector('tr:first-child');
+            if (firstRow) {
+                tableBody.insertBefore(row, firstRow);
+            } else {
+                tableBody.appendChild(row);
+            }
+        }
+
+
         function supSeat(elementId, count) {
             const element = document.getElementById(elementId)
             element.innerText = count;
@@ -505,6 +514,8 @@
             totalTicketPrice('totalPrice', count)
             totalTicketPrice('grand-Price', count)
             supSeat('selectedSeat', count);
+            seatDetailsCreate(elementId);
+
         }
 
 
