@@ -362,7 +362,7 @@
                                     <th>Price</th>
                                 </tr>
                             </thead>
-                            <tbody id="table-body" class="table-body">
+                            <tbody id="table-body">
 
                                 <tr class="text-xl font-semibold">
                                     <td>Total Price</td>
@@ -394,12 +394,12 @@
                 <div class="space-y-3">
                     <label class="text-xl font-semibold" for="name">Passenger Name*</label>
                     <br>
-                    <input class="p-4 rounded-lg w-full " type="text" name="" placeholder="Enter your name" id=""
+                    <input class="p-4 rounded-lg w-full " type="text" name="" placeholder="Enter your name" id="text"
                         class="border-2 border-gray-600 w-full" required>
                     <label class="text-xl font-semibold" for="name">Phone Number*</label>
                     <br>
                     <input class="p-4 rounded-lg w-full" type="number" name="" placeholder="Enter your phone number"
-                        id="" class="border-2 border-gray-600 w-full" required>
+                        id="phone" class="border-2 border-gray-600 w-full" required>
                     <label class="text-xl font-semibold" for="name">Email ID</label>
                     <br>
                     <input class="p-4 rounded-lg w-full" type="email" name="" placeholder="Enter your email id"
@@ -468,11 +468,11 @@
     <script>
         var count = 0;
 
-        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
         const nextButton = document.getElementById('next');
-        function checkEmail() {
-            const emailValue = emailInput.value.trim();
-            if (emailValue !== '') {
+        function checkPhone() {
+            const phoneValue = phoneInput.value.trim();
+            if (phoneValue !== '') {
                 nextButton.removeAttribute('disabled');
                 nextButton.classList.remove('btn-disabled');
             } else {
@@ -480,7 +480,7 @@
                 nextButton.classList.add('btn-disabled');
             }
         }
-        emailInput.addEventListener('input', checkEmail);
+        phoneInput.addEventListener('input', checkPhone);
 
         // adding seat details
         function seatDetailsCreate(btnId) {
@@ -542,12 +542,7 @@
             totalTicketPrice('grand-Price', count)
             supSeat('selectedSeat', count);
             seatDetailsCreate(elementId);
-            if (count <= 4) {
-                btnClick('nextElementId');
-            } else {
-
-                alert("btnClick function called four times!");
-            }
+            alertShow(count)
         }
 
 

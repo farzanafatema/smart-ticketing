@@ -10,8 +10,17 @@ function success() {
 
 }
 document.getElementById('next').addEventListener('click', success)
+// clear input field
+function clearInputFields() {
+    document.getElementById("phone").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("text").value = "";
+}
+
+
+
 //continue btn
-function Continue() {
+function Continue(rowIndex) {
     document.getElementById('nav').classList.remove('hidden')
     document.getElementById('banner').classList.remove('hidden')
     document.getElementById('cupon').classList.remove('hidden')
@@ -19,6 +28,19 @@ function Continue() {
     document.getElementById('footer').classList.remove('hidden')
     document.getElementById('foot').classList.remove('hidden')
     document.getElementById('success').classList.add('hidden')
+    // input field
+    clearInputFields()
+    // dynamic row
+    const tableBody = document.getElementById('table-body');
+    const numToRemove = 4;
+    let rowsRemoved = 0;
+    while (tableBody.firstChild && rowsRemoved <= numToRemove) {
+        tableBody.removeChild(tableBody.firstChild);
+        rowsRemoved++;
+    }
+    if (count % 4 === 0) {
+        alert("You can only buy four tickets");
+    }
 
 }
 document.getElementById('continue').addEventListener('click', Continue)
