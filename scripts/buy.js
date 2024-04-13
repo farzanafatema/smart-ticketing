@@ -1,3 +1,28 @@
+//next btn
+function success() {
+    document.getElementById('nav').classList.add('hidden')
+    document.getElementById('banner').classList.add('hidden')
+    document.getElementById('cupon').classList.add('hidden')
+    document.getElementById('buyTicket').classList.add('hidden')
+    document.getElementById('footer').classList.add('hidden')
+    document.getElementById('foot').classList.add('hidden')
+    document.getElementById('success').classList.remove('hidden')
+
+}
+document.getElementById('next').addEventListener('click', success)
+//continue btn
+function Continue() {
+    document.getElementById('nav').classList.remove('hidden')
+    document.getElementById('banner').classList.remove('hidden')
+    document.getElementById('cupon').classList.remove('hidden')
+    document.getElementById('buyTicket').classList.remove('hidden')
+    document.getElementById('footer').classList.remove('hidden')
+    document.getElementById('foot').classList.remove('hidden')
+    document.getElementById('success').classList.add('hidden')
+
+}
+document.getElementById('continue').addEventListener('click', Continue)
+
 //enable btn
 function handleCouponInput() {
     const couponInput = document.getElementById('couponInput');
