@@ -377,12 +377,19 @@
                                     <td></td>
                                     <td id="totalPrice">0</td>
                                 </tr>
+
+                                <tr class="text-lg font-semibold">
+
+                                    <td>Discount Price</td>
+                                    <td></td>
+                                    <td id="Discount-price">0</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
-                        <label class="input rounded-none flex items-center gap-2 pt-3">
-                            <input type="text" class="grow" placeholder="Have any copupon?" />
+                        <label id="cuponfield" class="input rounded-none flex items-center gap-2 pt-3">
+                            <input type="text" id="couponInput" class="grow" placeholder="Have any copupon?" />
                             <button id="btnApply" class="btn bg-[#1DD100] mb-3 btn-disabled">Apply</button>
                         </label>
                         <div class="flex text-xl justify-between font-bold p-3 ">
@@ -467,7 +474,9 @@
             const ticketPrice = perTicketPrice * count;
             const ticketPriceValue = document.getElementById(elementId)
             const priceValue = parseInt(ticketPriceValue.innerText);
-            ticketPriceValue.innerText = ticketPrice;
+            return ticketPriceValue.innerText = ticketPrice;
+
+
         }
         function seatLeft() {
             const totalSeat = document.getElementById('seatAvailable');
@@ -479,6 +488,7 @@
         function btnClick(elementId) {
             const element = document.getElementById(elementId);
             element.classList.add('bg-[#1DD100]');
+            element.removeAttribute('onclick');
             count++;
             seatLeft();
             totalTicketPrice('totalPrice', count)
