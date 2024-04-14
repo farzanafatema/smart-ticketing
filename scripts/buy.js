@@ -79,7 +79,7 @@ function calculateDiscountedTotal(couponCode) {
 
     } else {
 
-        alert("Invalid coupon code");
+        alert("Invalid coupon code.Right correct code");
     }
 
 }

@@ -238,13 +238,13 @@
                 <h1 class="font-bold text-2xl">Select Your Seat</h1>
                 <div class="flex  flex-row p-4 gap-40 ">
                     <!-- seat -->
-                    <div class="flex">
-                        <img cl src="images/seat-green.png" alt="">
+                    <div class="flex gap-2">
+                        <img cl src="images/Vector.svg" alt="">
                         <p>Available</p>
                     </div>
 
                     <!-- seat filled -->
-                    <div class="flex">
+                    <div class="flex gap-2">
                         <img src="images/seat-green-filled.png" alt="">
                         <p>Selected</p>
                     </div>
@@ -428,7 +428,8 @@
         </div>
     </section>
     <!-- footer section -->
-    <footer id="footer" class="footer p-16 bg-base-200 text-base-content bg-black text-white">
+    <footer id="footer"
+        class="footer px-32 py-10 bg-base-200 text-base-content bg-black text-white flex justify-between">
         <div>
             <h1 class="text-xl font-bold">P-Ticket</h1>
             <p>P-Ticket is a digital platform to make your daily commuting better.</p>
@@ -445,7 +446,8 @@
 
         </div>
     </footer>
-    <footer id="foot" class="footer p-12 border-t bg-base-200 text-base-content border-base-300 bg-black text-white">
+    <footer id="foot"
+        class="footer px-24 py-10 border-t bg-base-200 text-base-content border-base-300 bg-black text-white">
         <div class="flex flex-row justify-between w-full">
 
             <p>@all rights reserved, P-Ticket services limited.2024</p>
@@ -535,6 +537,7 @@
         function btnClick(elementId) {
             const element = document.getElementById(elementId);
             element.classList.add('bg-[#1DD100]');
+            element.classList.add('text-white');
             element.removeAttribute('onclick');
             count++;
             seatLeft();
