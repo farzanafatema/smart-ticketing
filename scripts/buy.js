@@ -21,6 +21,7 @@ function clearInputFields() {
 
 //continue btn
 function Continue(rowIndex) {
+
     document.getElementById('nav').classList.remove('hidden')
     document.getElementById('banner').classList.remove('hidden')
     document.getElementById('cupon').classList.remove('hidden')
@@ -38,9 +39,9 @@ function Continue(rowIndex) {
         tableBody.removeChild(tableBody.firstChild);
         rowsRemoved++;
     }
-    if (count % 4 === 0) {
-        alert("You can only buy four tickets");
-    }
+    //price reset
+    grandPriceCount = 0;
+    totalTicketPrice('grand-Price', grandPriceCount);
 
 }
 document.getElementById('continue').addEventListener('click', Continue)
@@ -52,11 +53,9 @@ function handleCouponInput() {
     if (couponInput.value === "NEW15" || couponInput.value === "Couple 20") {
         applyBtn.classList.remove('btn-disabled');
 
-    } else {
-        applyBtn.classList.add('btn-disabled')
     }
 }
-document.getElementById('couponInput').addEventListener('input', handleCouponInput);
+document.getElementById('couponInput').addEventListener('check', handleCouponInput);
 
 
 
@@ -70,6 +69,7 @@ function calculateDiscountedTotal(couponCode) {
         document.getElementById('grand-Price').innerText = discountedPrice;
         document.getElementById('Discount-price').innerText = discountPrice;
         document.getElementById('cuponfield').classList.add('hidden')
+
     } else if (couponCode === "NEW15") {
         const discountPrice = beforeDiscount * .15;
         const discountedPrice = beforeDiscount - discountPrice;
@@ -77,7 +77,11 @@ function calculateDiscountedTotal(couponCode) {
         document.getElementById('Discount-price').innerText = discountPrice;
         document.getElementById('cuponfield').classList.add('hidden')
 
+    } else {
+
+        alert("Invalid coupon code");
     }
+
 }
 document.getElementById('btnApply').addEventListener('click', function () {
     const couponCode = document.getElementById('couponInput').value;

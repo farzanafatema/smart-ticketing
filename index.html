@@ -369,7 +369,7 @@
                                     <td></td>
                                     <td id="totalPrice">0</td>
                                 </tr>
-                                <tr class="text-lg font-semibold">
+                                <tr id="discountRow" class="text-lg font-semibold hidden">
                                     <td>Discount Price</td>
                                     <td></td>
                                     <td id="Discount-price">0</td>
@@ -379,9 +379,9 @@
 
                     </div>
                     <div>
-                        <label id="cuponfield" class="input rounded-none flex items-center gap-2 pt-3">
+                        <label id="cuponfield" class="input rounded-none flex items-center gap-2 pt-3 hidden">
                             <input type="text" id="couponInput" class="grow" placeholder="Have any copupon?" />
-                            <button id="btnApply" class="btn bg-[#1DD100] mb-3 btn-disabled">Apply</button>
+                            <button onclick="clickApply()" id="btnApply" class="btn bg-[#1DD100] mb-3 ">Apply</button>
                         </label>
                         <div class="flex text-xl justify-between font-bold p-3 ">
                             <p>Grand Total</p>
@@ -466,13 +466,15 @@
 
     </footer>
     <script>
-        var count = 0;
+        let count = 0;
+        let grandPriceCount = 0;
 
         const phoneInput = document.getElementById('phone');
         const nextButton = document.getElementById('next');
         function checkPhone() {
             const phoneValue = phoneInput.value.trim();
-            if (phoneValue !== '') {
+            const btnClicked = count > 0;
+            if (phoneValue !== '' && btnClicked) {
                 nextButton.removeAttribute('disabled');
                 nextButton.classList.remove('btn-disabled');
             } else {
@@ -522,8 +524,6 @@
             const ticketPriceValue = document.getElementById(elementId)
             const priceValue = parseInt(ticketPriceValue.innerText);
             return ticketPriceValue.innerText = ticketPrice;
-
-
         }
         function seatLeft() {
             const totalSeat = document.getElementById('seatAvailable');
@@ -538,13 +538,23 @@
             element.removeAttribute('onclick');
             count++;
             seatLeft();
-            totalTicketPrice('totalPrice', count)
-            totalTicketPrice('grand-Price', count)
             supSeat('selectedSeat', count);
             seatDetailsCreate(elementId);
-            alertShow(count)
-        }
+            alertShow(count);
+            if (grandPriceCount < 4) {
+                grandPriceCount++;
+            }
+            totalTicketPrice('grand-Price', grandPriceCount);
+            totalTicketPrice('totalPrice', grandPriceCount)
+            if (count == 4) {
+                document.getElementById('discountRow').classList.remove('hidden')
+                document.getElementById('cuponfield').classList.remove('hidden')
+            } else {
+                document.getElementById('discountRow').classList.add('hidden')
 
+            }
+            checkPhone();
+        }
 
     </script>
     <script src="scripts/.js"></script>
