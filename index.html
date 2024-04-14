@@ -30,7 +30,7 @@
 
 <body>
     <!-- nav bar -->
-    <nav id="nav" class=" px-32 pt-12">
+    <nav id="nav" class="p-10 lg:px-32 lg:pt-12">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -72,8 +72,8 @@
     </nav>
 
     <!-- banner section -->
-    <section id="banner" class="  bg-[url(images/banner.png)] bg-no-repeat bg-center p-20">
-        <div class="flex flex-col justify-center items-center  space-y-6 text-white">
+    <section id="banner" class="  bg-[url(images/banner.png)] bg-no-repeat bg-center  lg:p-20">
+        <div class="flex flex-col justify-center items-center  lg:space-y-6 text-white">
             <h1 class="text-6xl font-raleway font-bold"> End-to-End Travel with <br> <span
                     class="text-[#1DD100] pl-24 ">P
                     Paribahan</span>
@@ -126,9 +126,9 @@
         </div>
     </section>
     <!-- cupon section -->
-    <section id="cupon" class="min-h-screen  p-32 ">
+    <section id="cupon" class="min-h-screen lg:p-32 ">
         <h1 class="text-4xl text-center font-bold">Best offers for you</h1>
-        <div class="grid grid-cols-2 gap-6 m-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 m-6">
             <div class="flex flex-row  bg-[#FFBF0F] rounded-2xl">
                 <div class="p-6 space-y-2">
                     <h1 class="text-2xl text-black font-bold">15% OFF</h1>
@@ -172,7 +172,8 @@
         </div>
     </section>
     <!-- main section -->
-    <main id="buyTicket" class="min-h-screen  p-32  space-y-4 bg-slate-50 border-t-4 border-t-[#1DD100] rounded-t-3xl">
+    <main id="buyTicket"
+        class="min-h-screen p-10  lg:p-32  space-y-4 bg-slate-50 border-t-4 border-t-[#1DD100] rounded-t-3xl">
         <h1 class="text-2xl font-bold text-center ">P.H Paribahan</h1>
         <p class="text-center">Yes, you can run unit tests and view the results directly within the app. The integrated
             testing features
@@ -180,10 +181,10 @@
         <!-- greenline poribohon -->
 
         <section>
-            <div class=" flex flex-row gap-4 bg-white">
+            <div class=" flex flex-col lg:flex-row gap-4 bg-white">
 
                 <div class="p-6">
-                    <div class="grid grid-cols-2 gap-16 ">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 ">
                         <div class="flex gap-2">
                             <div>
                                 <img src="images/bus-logo.png" alt="">
@@ -194,8 +195,8 @@
                             </div>
 
                         </div>
-                        <div class="flex flex-row gap-2  h-12 bg-[#F7F8F8] rounded-lg m-6 p-4">
-                            <img class="h-6" src="images/seat-green.png" alt="">
+                        <div class="flex  flex-row gap-2  h-12 bg-[#F7F8F8] rounded-lg m-6 p-2 lg:p-4">
+                            <img class=" w-4 h-6" src="images/seat-green.png" alt="">
                             <p class=" text-[#1DD100]"> <span id="seatAvailable">40</span> Seats left </p>
                         </div>
                     </div>
@@ -212,7 +213,7 @@
                         </div>
                         <hr class="border-dashed border-x-2">
                         <!-- three box -->
-                        <div class="flex justify-between p-4">
+                        <div class="flex flex-col  lg:justify-between p-4">
                             <p class="border-2 border-gray-600 rounded-xl p-4 font-semibold">Boarding Point - Laxmipur
                             </p>
                             <p class="border-2 border-gray-600 rounded-xl p-4 font-semibold">Dropping Point - Bogura</p>
@@ -220,10 +221,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- divider img -->
-                <div>
-                    <img src="images/info-devider.png" alt="">
-                </div>
+
+
                 <!-- price -->
                 <div class="flex flex-col justify-center items-center">
                     <img src="images/fare.png" alt="">
@@ -232,7 +231,7 @@
                 </div>
             </div>
         </section>
-        <section class="flex justify-between ">
+        <section class="flex flex-col lg:justify-between ">
             <!-- left side -->
             <section class="">
                 <h1 class="font-bold text-2xl">Select Your Seat</h1>
@@ -345,7 +344,7 @@
                     </div>
                 </div>
             </section>
-            <img class="max-h-full" src="images/cupon-devider.png" alt="">
+
             <!-- right side -->
             <section>
                 <h1 class="font-bold text-2xl">Select Your Seat</h1>
